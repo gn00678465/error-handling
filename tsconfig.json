@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "webworker"
+    ],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "paths": {},
+    "resolveJsonModule": true,
+    "types": [
+      "vitest"
+    ],
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*",
+    "packages/*/src/**/*",
+    "*.ts",
+    "*.tsx"
+  ],
+  "exclude": [
+    "types/**",
+    "node_modules",
+    "dist"
+  ]
+}

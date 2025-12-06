@@ -1,0 +1,20 @@
+catalogMode: prefer
+cleanupUnusedCatalogs: true
+
+shellEmulator: true
+trustPolicy: no-downgrade
+
+packages:
+  - packages/*
+
+catalogs:
+  dev:
+    '@antfu/eslint-config': ^6.4.2
+    bumpp: ^10.3.2
+    eslint: ^9.39.1
+    tsdown: ^0.17.0
+    typescript: ^5.9.3
+  test:
+    vitest: ^4.0.15
+  types:
+    '@types/node': ^24.9.1

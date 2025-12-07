@@ -31,6 +31,7 @@
   "devDependencies": {
     "@nuxt/module-builder": "catalog:integrations",
     "@nuxt/schema": "catalog:integrations",
+    "@nuxt/test-utils": "catalog:test",
     "nuxt": "catalog:dev",
     "vitest": "catalog:test"
   }

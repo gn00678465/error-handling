@@ -1,12 +1,31 @@
 {
   "name": "@error-handling/core",
-  "version": "1.0.0",
-  "description": "",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Core error handling library for HTTP requests",
   "author": "",
   "license": "ISC",
-  "keywords": [],
-  "main": "index.js",
+  "keywords": [
+    "error-handling",
+    "http",
+    "fetch",
+    "core"
+  ],
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "build": "tsdown src/index.ts",
+    "test": "vitest",
+    "lint": "eslint .",
+    "prepare": "pnpm build"
+  },
+  "dependencies": {}
 }

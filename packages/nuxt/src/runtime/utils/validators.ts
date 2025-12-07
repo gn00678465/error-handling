@@ -67,12 +67,13 @@ export function isFetchResponse<T = unknown>(response: unknown): response is Fet
 interface FetchError<T = any> extends Error {
   request?: unknown
   options?: unknown
-  response?: unknown
+  response?: FetchResponse<T>
   data?: T
   status?: number
   statusCode?: number
   statusText?: string
   statusMessage?: string
+  cause?: unknown
 }
 
 interface FetchContext<T = any> {

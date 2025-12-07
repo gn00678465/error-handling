@@ -11,7 +11,14 @@
     "rootDir": ".",
     "module": "esnext",
     "moduleResolution": "Bundler",
-    "paths": {},
+    "paths": {
+      "@error-handling/core": [
+        "./packages/core/src/index.ts"
+      ],
+      "@error-handling/core/*": [
+        "./packages/core/src/*"
+      ]
+    },
     "resolveJsonModule": true,
     "types": [
       "vitest"
@@ -29,15 +36,13 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*",
-    "packages/*/src/**/*",
-    "*.ts",
-    "*.tsx"
+    "packages",
+    "*.ts"
   ],
   "exclude": [
     "types/**",
     "node_modules",
-    "dist",
+    "**/dist",
     "**/*.md"
   ]
 }

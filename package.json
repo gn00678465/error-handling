@@ -10,6 +10,8 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
+    "build": "pnpm -r run build",
+    "prepare": "pnpm build",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },

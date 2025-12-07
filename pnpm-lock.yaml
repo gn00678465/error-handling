@@ -15,6 +15,9 @@ catalogs:
     eslint:
       specifier: ^9.39.1
       version: 9.39.1
+    tsdown:
+      specifier: ^0.17.0
+      version: 0.17.0
     typescript:
       specifier: ^5.9.3
       version: 5.9.3
@@ -44,7 +47,7 @@ importers:
         specifier: catalog:dev
         version: 9.39.1(jiti@2.6.1)
       tsdown:
-        specifier: ^0.17.0
+        specifier: catalog:dev
         version: 0.17.0(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: catalog:dev
@@ -52,6 +55,8 @@ importers:
       vitest:
         specifier: catalog:test
         version: 4.0.15(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.2)
+
+  packages/core: {}
 
 packages:
 

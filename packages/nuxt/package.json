@@ -19,7 +19,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "prepare": "nuxt-module-build prepare && nuxt-module-build build"
+    "prepare": "nuxt-module-build prepare && nuxt-module-build build",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "nuxt": "^3.0.0 || ^4.0.0-0"

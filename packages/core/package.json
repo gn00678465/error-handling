@@ -23,7 +23,9 @@
   ],
   "scripts": {
     "build": "tsdown src/index.ts",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "prepare": "pnpm build"
   },

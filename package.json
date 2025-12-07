@@ -13,7 +13,9 @@
     "build": "pnpm -r run build",
     "prepare": "pnpm build",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",

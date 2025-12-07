@@ -15,7 +15,7 @@ export function useErrorHandling(
 
   const handleError = (error: unknown, overrideHandlers?: Handlers) => {
     const mergedHandlers = overrideHandlers
-      ? { ...handlers, ...overrideHandlers } as HandlersWithDefault
+      ? { ...handlers, ...overrideHandlers }
       : handlers
 
     return errorHandler(error, mergedHandlers, _options)

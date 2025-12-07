@@ -64,7 +64,7 @@ export function isFetchResponse<T = unknown>(response: unknown): response is Fet
 
 // Define types locally if not available from #app or ofetch during build time for the library
 // Ideally these should come from dependencies, but for the purpose of this file:
-interface FetchError<T = any> extends Error {
+interface FetchError<T = unknown> extends Error {
   request?: unknown
   options?: unknown
   response?: FetchResponse<T>
@@ -76,7 +76,7 @@ interface FetchError<T = any> extends Error {
   cause?: unknown
 }
 
-interface FetchContext<T = any> {
+interface FetchContext<T = unknown> {
   request: unknown
   options: unknown
   response?: FetchResponse<T>

@@ -21,7 +21,7 @@ export async function normalizeFetchError<T = unknown>(
   const statusMessage = error.statusMessage ?? error.statusText
 
   // 優先使用 error.data,否則嘗試從 response._data 取得
-  const data = error.data ?? (error.response as any)?._data
+  const data = error.data ?? (error.response as unknown & { _data?: T })?._data
 
   // 建立錯誤訊息
   const message = error.message || (statusCode ? `HTTP Error ${statusCode}` : 'Fetch Error')

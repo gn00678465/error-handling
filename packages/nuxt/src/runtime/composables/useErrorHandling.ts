@@ -1,6 +1,6 @@
 import type { ErrorHandlerOptions, Handlers, HandlersWithDefault } from '@error-handling/core'
 import { errorHandler } from '@error-handling/core'
-import { normalizeFetchError } from '../utils/normalizers'
+import { normalizeError } from '../utils/normalizers'
 import { validateError } from '../utils/validators'
 
 export function useErrorHandling(
@@ -9,7 +9,7 @@ export function useErrorHandling(
 ) {
   const _options: ErrorHandlerOptions = {
     validateError,
-    normalizeError: normalizeFetchError,
+    normalizeError,
     ...options,
   }
 

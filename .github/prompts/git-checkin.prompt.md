@@ -62,6 +62,7 @@ description: 'Git Commit Message Generator - Conventional Commits (繁體中文)
 1. **取得變更資訊：**
    - 執行 `git status` 檢查當前狀態。
    - 執行 `git diff --staged` 查看已 staged 的變更內容。
+   - 計算已 staged 的檔案項目數（staged changes count），用於決定提交策略（-F 或 -m）。
 
 2. **檢查分支與決定行為：**
    - **請判斷**當前分支是否為 `main` 或 `master`。
@@ -72,15 +73,37 @@ description: 'Git Commit Message Generator - Conventional Commits (繁體中文)
      - **回報錯誤**並建議使用者：`請先切換至建議的分支 (或自訂分支) 後，再執行 commit。`
 
 3. **生成 Commit Message 與指令 (僅在情況 A 執行)：**
-   - 分析變更類型和影響範圍。
-   - 根據變更內容決定最適合的 commit type。
-   - **輸出**完整的 Commit Message（包含 Type, Scope, Subject, Body）。
-   - **輸出**建議用於提交的 `git commit -m` 指令（確保多行訊息正確）。
+    - 分析變更類型和影響範圍。
+    - 根據變更內容決定最適合的 commit type。
+    - **輸出**完整的 Commit Message（包含 Type, Scope, Subject, Body）。
+    - 根據已 staged 的變更項目數量選擇提交方式：
+       - 若已 staged 的變更數量 **大於或等於 3**：
+          - 建議使用 `-F commit-message.txt` 方式提交（適合多行且詳細的 commit message）。
+          - **務必**說明在執行 `git add` 之前或之後，**暫存檔案 `commit-message.txt` 不可列入 staged changes**；可用 `git restore --staged commit-message.txt` 在必要時將該檔案從 index 中移除。
+          - 建議輸出的步驟（macOS / Linux / Windows PowerShell）：
+             - 建立 `commit-message.txt` 並寫入訊息（不要先 `git add` 它）。
+             - `git add -A`（確保 commit-message.txt 沒被誤加入），若誤加入則 `git restore --staged commit-message.txt`。
+             - `git commit -F commit-message.txt`。
+             - 刪除暫存檔案 `commit-message.txt`（詳見步驟 4）。
+       - 若已 staged 的變更數量 **小於 3**：
+          - 建議使用 `-m` 方式提交；輸出 `git commit -m "<subject>\n\n<body>"` 指令（單行或簡短多行訊息）。
 
 4. **後續清理指示 (僅在情況 A 執行，且使用 -F 提交時)：**
-   - 如果步驟 3 建議使用 `-F commit-message.txt` 方式提交，請**輸出**以下指令給使用者，用於提交後清除檔案：
-     - macOS/Linux: `git commit -F commit-message.txt && rm -f commit-message.txt`
-     - Windows: `請使用者執行 git commit -F commit-message.txt 後，手動執行移除指令。`
+    - 如果步驟 3 建議使用 `-F commit-message.txt` 方式提交，請確保暫存檔案不被 staged，並**輸出**以下指令以便使用者提交與移除檔案：
+       - 在提交前：
+          - 建立 `commit-message.txt` 並寫入 commit message（不要加入 staged）。
+          - 在 staging 確認後，如發現 `commit-message.txt` 被誤加入，可使用 `git restore --staged commit-message.txt`（或 `git reset HEAD commit-message.txt`）將它從 index 中移除。
+       - 提交與刪除（macOS / Linux）：
+          - `git add -A`  
+          - `git restore --staged commit-message.txt || true`  
+          - `git commit -F commit-message.txt`  
+          - `rm -f commit-message.txt`
+       - 提交與刪除（Windows PowerShell）：
+          - `git add -A`  
+          - `git restore --staged commit-message.txt || git reset HEAD commit-message.txt`  
+          - `git commit -F commit-message.txt`  
+          - `Remove-Item .\commit-message.txt`  
+       - 注意：`commit-message.txt` **一律不應**加入 staged changes；提交完畢必須移除該暫存檔案。
 
 ## [EXAMPLES]
 ```

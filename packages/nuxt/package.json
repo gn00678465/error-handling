@@ -15,11 +15,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-module-build build",
+    "build": "nuxt-module-build prepare && nuxt-module-build build",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "prepare": "nuxt-module-build prepare && nuxt-module-build build",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

@@ -1,0 +1,39 @@
+{
+  "name": "@error-handling/nuxt",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Nuxt module for @error-handling/core",
+  "license": "ISC",
+  "exports": {
+    ".": "./dist/module.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/module.mjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/module.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "prepare": "nuxt-module-build prepare && nuxt-module-build build",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.0.0 || ^4.0.0-0"
+  },
+  "dependencies": {
+    "@error-handling/core": "workspace:*",
+    "@nuxt/kit": "catalog:integrations"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "catalog:integrations",
+    "@nuxt/schema": "catalog:integrations",
+    "@nuxt/test-utils": "catalog:test",
+    "nuxt": "catalog:dev",
+    "vitest": "catalog:test"
+  }
+}

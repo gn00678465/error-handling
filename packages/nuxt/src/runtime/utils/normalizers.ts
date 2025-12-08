@@ -8,9 +8,9 @@ import { isFetchError } from './validators'
  * @returns 標準化後的錯誤物件
  * @throws {TypeError} 如果傳入的不是 NuxtError 或 FetchError 物件
  */
-export async function normalizeError<T = unknown>(
+export function normalizeError<T = unknown>(
   error: unknown,
-): Promise<NormalizedError<T>> {
+): NormalizedError<T> {
   // 優先處理 NuxtError
   if (isNuxtError<T>(error)) {
     return normalizeNuxtError<T>(error)
@@ -30,9 +30,9 @@ export async function normalizeError<T = unknown>(
  * @returns 標準化後的錯誤物件
  * @throws {TypeError} 如果傳入的不是 NuxtError 物件
  */
-export async function normalizeNuxtError<T = unknown>(
+export function normalizeNuxtError<T = unknown>(
   error: unknown,
-): Promise<NormalizedError<T>> {
+): NormalizedError<T> {
   if (!isNuxtError<T>(error)) {
     throw new TypeError('Expected NuxtError object')
   }
@@ -54,9 +54,9 @@ export async function normalizeNuxtError<T = unknown>(
  * @returns 標準化後的錯誤物件
  * @throws {TypeError} 如果傳入的不是 FetchError 物件
  */
-export async function normalizeFetchError<T = unknown>(
+export function normalizeFetchError<T = unknown>(
   error: unknown,
-): Promise<NormalizedError<T>> {
+): NormalizedError<T> {
   if (!isFetchError<T>(error)) {
     throw new TypeError('Expected FetchError object')
   }

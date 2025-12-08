@@ -1,5 +1,0 @@
-refactor(nuxt): 移除 normalize async 並同步化測試
-
-- 移除 packages/nuxt/src/runtime/utils/normalizers.ts 的 async，改為回傳同步 NormalizedError<T>
-- 更新 packages/nuxt/src/__tests__/normalizers.test.ts，改用同步斷言並移除 async/await
-- 確認測試通過並維持 NormalizeErrorFn 相容性

@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm -r run build",
-    "prepare": "pnpm build",
+    "prepare": "pnpm -r run build",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "test": "pnpm -r run test",

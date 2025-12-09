@@ -1,4 +1,4 @@
-import type { NormalizedError } from '@error-handling/core'
+import type { NormalizedError } from '@gn00678465/error-handling-core'
 import { isNuxtError } from 'nuxt/app'
 import { isFetchError } from './validators'
 

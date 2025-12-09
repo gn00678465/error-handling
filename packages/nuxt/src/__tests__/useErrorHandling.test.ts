@@ -1,8 +1,8 @@
-import { errorHandler } from '@error-handling/core'
+import { errorHandler } from '@gn00678465/error-handling-core'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { useErrorHandling } from '../runtime/composables/useErrorHandling'
 
-vi.mock('@error-handling/core', () => ({
+vi.mock('@gn00678465/error-handling-core', () => ({
   errorHandler: vi.fn(),
 }))
 

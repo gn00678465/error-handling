@@ -49,8 +49,8 @@
     "postcss"
   ],
   "chat.promptFilesLocations": {
-    ".github/prompts": true,                          // 專案特定的 prompts
-    ".github/copilot-common/prompts": true            // 通用的 prompts
+    ".github/prompts": true, // 專案特定的 prompts
+    ".github/copilot-common/prompts": true // 通用的 prompts
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {

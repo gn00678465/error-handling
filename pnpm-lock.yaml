@@ -47,8 +47,8 @@ catalogs:
       version: 24.10.1
 
 overrides:
-  '@error-handling/core': workspace:*
-  '@error-handling/nuxt': workspace:*
+  '@gn00678465/error-handling-core': workspace:*
+  '@gn00678465/error-handling-nuxt': workspace:*
 
 importers:
 
@@ -80,7 +80,7 @@ importers:
 
   packages/nuxt:
     dependencies:
-      '@error-handling/core':
+      '@gn00678465/error-handling-core':
         specifier: workspace:*
         version: link:../core
       '@nuxt/kit':

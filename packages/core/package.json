@@ -1,5 +1,5 @@
 {
-  "name": "@error-handling/core",
+  "name": "@gn00678465/error-handling-core",
   "type": "module",
   "version": "0.1.0",
   "description": "Core error handling library for HTTP requests",
@@ -29,5 +29,9 @@
     "lint": "eslint .",
     "prepare": "pnpm build"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
 }

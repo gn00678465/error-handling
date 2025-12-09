@@ -15,7 +15,11 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "test": "pnpm -r run test",
-    "typecheck": "pnpm -r run typecheck"
+    "typecheck": "pnpm -r run typecheck",
+    "release:patch": "bumpp patch --commit --tag --push",
+    "release:minor": "bumpp minor --commit --tag --push",
+    "release:major": "bumpp major --commit --tag --push",
+    "release": "bumpp --commit --tag --push"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
@@ -27,7 +31,7 @@
     "vitest": "catalog:test"
   },
   "resolutions": {
-    "@error-handling/core": "workspace:*",
-    "@error-handling/nuxt": "workspace:*"
+    "@gn00678465/error-handling-core": "workspace:*",
+    "@gn00678465/error-handling-nuxt": "workspace:*"
   }
 }

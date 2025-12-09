@@ -6,5 +6,10 @@ export default antfu({
   stylistics: true,
   ignores: [
     '**/README.md',
+    '.github/**',
+    'openspec/**',
+    'AGENTS.md',
+    'CLAUDE.md',
+    '.serena/**',
   ],
 })

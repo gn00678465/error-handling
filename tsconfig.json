@@ -17,6 +17,12 @@
       ],
       "@error-handling/core/*": [
         "./packages/core/src/*"
+      ],
+      "@error-handling/nuxt": [
+        "./packages/nuxt/src/module.ts"
+      ],
+      "@error-handling/nuxt/*": [
+        "./packages/nuxt/src/*"
       ]
     },
     "resolveJsonModule": true,

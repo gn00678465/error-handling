@@ -1,8 +1,8 @@
 {
-  "name": "@error-handling/nuxt",
+  "name": "@gn00678465/error-handling-nuxt",
   "type": "module",
   "version": "0.1.0",
-  "description": "Nuxt module for @error-handling/core",
+  "description": "Nuxt module for @gn00678465/error-handling-core",
   "license": "ISC",
   "exports": {
     ".": "./dist/module.mjs",
@@ -19,13 +19,14 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "pnpm build"
   },
   "peerDependencies": {
     "nuxt": "^3.0.0 || ^4.0.0-0"
   },
   "dependencies": {
-    "@error-handling/core": "workspace:*",
+    "@gn00678465/error-handling-core": "workspace:*",
     "@nuxt/kit": "catalog:integrations"
   },
   "devDependencies": {
@@ -34,5 +35,9 @@
     "@nuxt/test-utils": "catalog:test",
     "nuxt": "catalog:dev",
     "vitest": "catalog:test"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
   }
 }

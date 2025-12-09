@@ -1,5 +1,5 @@
-import type { ErrorHandlerOptions, Handlers, HandlersWithDefault } from '@error-handling/core'
-import { errorHandler } from '@error-handling/core'
+import type { ErrorHandlerOptions, Handlers, HandlersWithDefault } from '@gn00678465/error-handling-core'
+import { errorHandler } from '@gn00678465/error-handling-core'
 import { normalizeError } from '../utils/normalizers'
 import { validateError } from '../utils/validators'
 

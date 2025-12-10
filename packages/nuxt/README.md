@@ -1,21 +1,21 @@
-# @error-handling/nuxt
+# @gn00678465/error-handling-nuxt
 
-`@error-handling/core` 的 Nuxt 模組。
+`@gn00678465/error-handling-core` 的 Nuxt 模組。
 
 ## 安裝
 
 ```bash
-pnpm add @error-handling/nuxt @error-handling/core
+pnpm add @gn00678465/error-handling-nuxt @gn00678465/error-handling-core
 ```
 
 ## 使用方法
 
-將 `@error-handling/nuxt` 加入您的 `nuxt.config.ts`：
+將 `@gn00678465/error-handling-nuxt` 加入您的 `nuxt.config.ts`：
 
 ```typescript
 export default defineNuxtConfig({
   modules: [
-    '@error-handling/nuxt'
+    '@gn00678465/error-handling-nuxt'
   ]
 })
 ```

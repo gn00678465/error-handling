@@ -1,17 +1,17 @@
-# @error-handling/core
+# @gn00678465/error-handling-core
 
 一個框架無關的 HTTP 錯誤處理核心函式庫。提供基於 HTTP 狀態碼的錯誤處理機制，專注於原生 fetch API，並設計為可擴展的架構，允許其他套件重用核心邏輯。
 
 ## 安裝
 
 ```bash
-pnpm add @error-handling/core
+pnpm add @gn00678465/error-handling-core
 ```
 
 ## 基本用法
 
 ```typescript
-import { errorHandler } from '@error-handling/core'
+import { errorHandler } from '@gn00678465/error-handling-core'
 
 try {
   const response = await fetch('https://dummyjson.com/http/403/403_error')
@@ -64,7 +64,7 @@ await errorHandler<ApiError>(error, {
 你可以傳入自訂的 `validateError` 和 `normalizeError` 函式來支援其他 HTTP 客戶端（如 axios）。
 
 ```typescript
-import { errorHandler } from '@error-handling/core'
+import { errorHandler } from '@gn00678465/error-handling-core'
 import { isAxiosError } from 'axios'
 
 await errorHandler(error, handlers, {
